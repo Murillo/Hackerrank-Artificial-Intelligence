@@ -10,11 +10,16 @@
 # The bot here is positioned at the top left corner of a 5*5 grid. Your task 
 # is to move the bot to clean all the dirty cells.
 
+# import library
+import math
+
 # Update cost that bot need to arrive the dirty
 def update_position(posr, posc, dirties):
     nearest_dirt = []
     for i in range(len(dirties)):
-        nearest_dirt.append((dirties[i][0] - posr) + (dirties[i][1] - posc))
+        # Euclidean distance
+        result = math.sqrt(((dirties[i][0] - posr) ** 2) + ((dirties[i][1] - posc) ** 2))
+        nearest_dirt.append(result)
     return [x for (y,x) in sorted(zip(nearest_dirt,dirties))]
 
 # Set the bot in your new position
