@@ -10,11 +10,34 @@
 # The bot here is positioned at the top left corner of a 5*5 grid. Your task 
 # is to move the bot to clean all the dirty cells.
 
-# Head ends here
-def next_move(posr, posc, board):
-    print("")
+# Update cost that bot need to arrive the dirty
+def update_position(posr, posc, dirties):
+    nearest_dirt = []
+    for i in range(len(dirties)):
+        nearest_dirt.append((dirties[i][0] - posr) + (dirties[i][1] - posc))
+    return [x for (y,x) in sorted(zip(nearest_dirt,dirties))]
 
-# Tail starts here
+# Set the bot in your new position
+def next_move(posr, posc, board):
+    dirties = []
+    for i in range(len(board)):
+        for j in range(len(board[i])):
+            if board[i][j] == 'd':
+                dirties.append([i, j])
+
+    next_dirt = update_position(posr, posc, dirties)
+    if next_dirt[0][1] < posc:
+        print('LEFT')
+    elif next_dirt[0][1]  > posc:
+        print('RIGHT')
+    elif next_dirt[0][0] < posr:
+        print('UP')
+    elif next_dirt[0][0] > posr:
+        print('DOWN')
+    else:
+        print('CLEAN')
+
+# Set the data
 if __name__ == "__main__":
     pos = [int(i) for i in input().strip().split()]
     board = [[j for j in input().strip()] for i in range(5)]
