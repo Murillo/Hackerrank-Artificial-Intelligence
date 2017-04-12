@@ -3,7 +3,8 @@ This repository contains challenges of site [Hackerrank](https://www.hackerrank.
 
 | Subdomain     | Challenge                               | Level | Max Score | Score Obtained |
 | :------------ |:--------------------------------------- |:-----:|:---------:|:--------------:|
-| Bot Building  | Bot saves princes                       | easy  | 13.9      | 13.9           |
-| Bot Building  | Bot saves princess - 2                  | easy  | 17.5      | 17.5           |
-| Bot Building  | BotClean                                | easy  | 17.83     | 17.83          |
-| Bot Building  | BotClean Stochastic                     | easy  | 10        | 10             |
+| Bot Building  | Bot saves princes                       | Easy  | 13.9      | 13.9           |
+| Bot Building  | Bot saves princess - 2                  | Easy  | 17.5      | 17.5           |
+| Bot Building  | BotClean                                | Easy  | 17.83     | 17.83          |
+| Bot Building  | BotClean Stochastic                     | Easy  | 10        | 10             |
+| Bot Building  | BotClean Large                          | Hard  | 56.40     | 54.20          |
