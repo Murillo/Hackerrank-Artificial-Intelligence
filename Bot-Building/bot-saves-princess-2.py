@@ -3,6 +3,9 @@
 # of the bot and the character array grid - and outputs the next 
 # move the bot makes to rescue the princess.
 
+# Link: https://www.hackerrank.com/challenges/saveprincess2
+# Developer: Murillo Grubler
+
 def nextMove(n,r,c,grid):
     pos_col_m = c
     pos_row_m = r

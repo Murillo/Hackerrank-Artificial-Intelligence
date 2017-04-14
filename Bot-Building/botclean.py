@@ -10,6 +10,9 @@
 # The bot here is positioned at the top left corner of a 5*5 grid. Your task 
 # is to move the bot to clean all the dirty cells.
 
+# Link: https://www.hackerrank.com/challenges/botclean
+# Developer: Murillo Grubler
+
 # import library
 import math
 

@@ -9,6 +9,9 @@
 # moves (LEFT, RIGHT, UP or DOWN) on consecutive lines to rescue/reach 
 # the princess. The goal is to reach the princess in as few moves as possible.
 
+# Link: https://www.hackerrank.com/challenges/saveprincess
+# Developer: Murillo Grubler
+
 def displayPathtoPrincess(n,grid):
     pos_col = {}
     pos_row = {}

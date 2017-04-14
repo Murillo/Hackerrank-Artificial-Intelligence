@@ -10,6 +10,9 @@
 # in the matrix, print the next operation MegaMaid will perform 
 # (e.g., UP, CLEAN, etc.) on a new line.
 
+# Link: https://www.hackerrank.com/challenges/botcleanlarge
+# Developer: Murillo Grubler
+
 # import library
 import math
 

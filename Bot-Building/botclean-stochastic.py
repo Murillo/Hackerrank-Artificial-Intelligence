@@ -11,6 +11,9 @@
 # The bot here is positioned at the top left corner of a 5*5 grid. Your task 
 # is to move the bot to appropriate dirty cell and clean it.
 
+# Link: https://www.hackerrank.com/challenges/botcleanr
+# Developer: Murillo Grubler
+
 # Define function that will move the bot
 def nextMove(posr, posc, board):
     dirty_row = dirty_col = 0
