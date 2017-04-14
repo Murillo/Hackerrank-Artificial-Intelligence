@@ -48,8 +48,12 @@ def update_info_file(board):
             for i in range(len(memory_board)):
                 new_row_memory = []
                 for j in range(len(memory_board[i])):
-                    if memory_board[i][j] == 'o' and board[i][j] == '-':
+                    if ((memory_board[i][j] == 'o' and board[i][j] == '-') or 
+                        (memory_board[i][j] == 'd' and board[i][j] == '-') or
+                        (memory_board[i][j] == 'd' and board[i][j] == 'b')):
                         new_row_memory.append('-')
+                    elif memory_board[i][j] == 'o' and board[i][j] == 'd':
+                        new_row_memory.append('d')
                     else:
                         new_row_memory.append(memory_board[i][j])
                 new_memory_board.append(new_row_memory)
@@ -66,32 +70,35 @@ def update_position(posr, posc, dirties):
         nearest_dirt.append(result)
     return [x for (y,x) in sorted(zip(nearest_dirt,dirties))]
 
+# Find certain elements on the board
+def get_element_board(board, element):
+    dirties = []
+    for i in range(len(board)):
+        for j in range(len(board[i])):
+            if board[i][j] in element:
+                dirties.append([i, j])
+    return dirties
+
 # Set next action the bot
 def next_move(posx, posy, board):
     # Save board in bot's memory  
     update_info_file(board)
+    elements = get_element_board(board, ['d'])
+    if len(elements) == 0:
+        elements = get_element_board(get_info_file(), ['o','d'])
 
-    dirties = []
-    for i in range(len(board)):
-        for j in range(len(board[i])):
-            if board[i][j] == 'd':
-                dirties.append([i, j])
-
-    next_dirt = update_position(posx, posy, dirties) if len(dirties) > 1 else dirties
+    next_dirt = update_position(posx, posy, elements)
     if (len(next_dirt) > 0):
-        if next_dirt[0][1] < posy:
-            print('LEFT')
-        elif next_dirt[0][1]  > posy:
+        if next_dirt[0][1]  > posy:
             print('RIGHT')
+        elif next_dirt[0][1] < posy:
+            print('LEFT')
         elif next_dirt[0][0] < posx:
             print('UP')
         elif next_dirt[0][0] > posx:
             print('DOWN')
         else:
             print('CLEAN')
-    else:
-        # Escolher um caminho a tomar
-        print('RIGHT')
 
 # Start application
 if __name__ == "__main__":
@@ -99,4 +106,3 @@ if __name__ == "__main__":
     pos = [int(i) for i in input().strip().split()] 
     board = [[j for j in input().strip()] for i in range(5)]  
     next_move(pos[0], pos[1], board)
-    
