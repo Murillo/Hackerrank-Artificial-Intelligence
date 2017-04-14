@@ -8,3 +8,4 @@ This repository contains challenges of site [Hackerrank](https://www.hackerrank.
 | Bot Building  | BotClean                                | Easy  | 17.83     | 17.83          |
 | Bot Building  | BotClean Stochastic                     | Easy  | 10        | 10             |
 | Bot Building  | BotClean Large                          | Hard  | 56.40     | 54.20          |
+| Bot Building  | BotClean Partially Observable           | Hard  | 28.52     | 7.36           |
