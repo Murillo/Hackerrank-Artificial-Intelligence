@@ -19,33 +19,15 @@ def update_position(posr, posc, dirties):
         nearest_dirt.append(result)
     return [x for (y,x) in sorted(zip(nearest_dirt,dirties))]
 
-# It only obtains the visible field and set a new position 
-# for the bot in relation to this visible field
-def visible_field(board):
-    bot_x = bot_y = 0
-    visible = []
-    for i in range(len(board)):
-        row = []
-        for j in range(len(board[i])):
-            if board[i][j] != 'b':
-                bot_x = board[i]
-                bot_y = board[j]
-            elif board[i][j] != 'o':
-                row.append(board[i][j])
-        if len(row) > 0:
-            visible.append(row)
-    return bot_x, bot_y, visible
-
 # Set next action the bot
 def next_move(posx, posy, board):
-    posx, posy, board = visible_field(board)
     dirties = []
     for i in range(len(board)):
         for j in range(len(board[i])):
             if board[i][j] == 'd':
                 dirties.append([i, j])
 
-    next_dirt = update_position(posx, posy, dirties)
+    next_dirt = update_position(posx, posy, dirties) if len(dirties) > 1 else dirties
     if (len(next_dirt) > 0):
         if next_dirt[0][1] < posy:
             print('LEFT')
@@ -58,7 +40,7 @@ def next_move(posx, posy, board):
         else:
             print('CLEAN')
     else:
-        print('LEFT')
+        print('RIGHT')
 
 # Set data
 if __name__ == "__main__": 
