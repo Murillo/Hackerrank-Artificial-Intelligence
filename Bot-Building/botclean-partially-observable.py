@@ -8,8 +8,55 @@
 # Developer: Murillo Grubler
 
 # import library
+import os
 import math
 
+# Get board saved in memory
+def get_info_file():
+    temp_memory_board = []
+    filename = "file-bot/board.txt"
+    if os.path.isfile(filename):
+        with open(filename, "r") as f:
+            memory_board = f.read().split('\n')
+            for i in range(len(memory_board)):
+                temp_row_memory = []
+                for j in range(len(memory_board[i])):
+                    temp_row_memory.append(memory_board[i][j])
+                temp_memory_board.append(temp_row_memory)
+    return temp_memory_board
+
+# Save the board in bot's memory
+def save_info_file(board, filename):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    with open(filename, "w") as f:
+        for i in range(len(board)):
+            columns = "\n" if i > 0 else ""
+            for j in range(len(board[i])):
+                if board[i][j] == "b":
+                    columns = columns + "-"
+                else:    
+                    columns = columns + board[i][j]
+            f.write(columns)
+
+# Save and read the file that contains the bot's memory
+def update_info_file(board):
+    filename = "file-bot/board.txt"
+    if os.path.isfile(filename):
+        with open(filename, "r") as f:
+            new_memory_board = []
+            memory_board = f.read().split('\n')
+            for i in range(len(memory_board)):
+                new_row_memory = []
+                for j in range(len(memory_board[i])):
+                    if memory_board[i][j] == 'o' and board[i][j] == '-':
+                        new_row_memory.append('-')
+                    else:
+                        new_row_memory.append(memory_board[i][j])
+                new_memory_board.append(new_row_memory)
+            save_info_file(new_memory_board, filename)
+    else:
+        save_info_file(board, filename)
+            
 # Update cost that bot need to arrive the dirty
 def update_position(posr, posc, dirties):
     nearest_dirt = []
@@ -21,6 +68,9 @@ def update_position(posr, posc, dirties):
 
 # Set next action the bot
 def next_move(posx, posy, board):
+    # Save board in bot's memory  
+    update_info_file(board)
+
     dirties = []
     for i in range(len(board)):
         for j in range(len(board[i])):
@@ -40,10 +90,13 @@ def next_move(posx, posy, board):
         else:
             print('CLEAN')
     else:
+        # Escolher um caminho a tomar
         print('RIGHT')
 
-# Set data
-if __name__ == "__main__": 
+# Start application
+if __name__ == "__main__":
+    # Set data
     pos = [int(i) for i in input().strip().split()] 
     board = [[j for j in input().strip()] for i in range(5)]  
     next_move(pos[0], pos[1], board)
+    
