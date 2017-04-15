@@ -9,3 +9,8 @@ This repository contains challenges of site [Hackerrank](https://www.hackerrank.
 | Bot Building  | [BotClean Stochastic](https://github.com/Murillo/Hackerrank-Artificial-Intelligence/blob/master/Bot-Building/botclean-stochastic.py)                     | Easy  | 10        | 10             |
 | Bot Building  | [BotClean Large](https://github.com/Murillo/Hackerrank-Artificial-Intelligence/blob/master/Bot-Building/botclean-large.py)                          | Hard  | 56.40     | 54.20          |
 | Bot Building  | [BotClean Partially Observable](https://github.com/Murillo/Hackerrank-Artificial-Intelligence/blob/master/Bot-Building/botclean-partially-observable.py)           | Hard  | 28.52     | 28.32          |
+| Bot Building  | Maze Escape           | Medium  | 100     | 0         |
+| Bot Building  | Click-o-Mania         |Advanced | 80      | 0         |
+| Bot Building  | Battleship 1 Player   | Hard    | 50      | 0         |
+| Bot Building  | Battleship            |Advanced | 100     | 0         |
+| Bot Building  | Checkers              | Expert  | 100     | 0         |
