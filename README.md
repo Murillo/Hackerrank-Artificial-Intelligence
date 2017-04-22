@@ -14,3 +14,4 @@ This repository contains challenges of site [Hackerrank](https://www.hackerrank.
 | Bot Building  | Battleship 1 Player   | Hard    | 50      | 0         |
 | Bot Building  | Battleship            |Advanced | 100     | 0         |
 | Bot Building  | Checkers              | Expert  | 100     | 0         |
+| Digital Image Analysis  | [Digital Camera Autodetect: Day or Night](https://github.com/Murillo/Hackerrank-Artificial-Intelligence/blob/master/Digital-Image-Analysis/digital-camera-autodetect-day-or-night.py)              | Medium  | 30     | 30         |
