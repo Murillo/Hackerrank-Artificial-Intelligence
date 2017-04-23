@@ -62,4 +62,4 @@ for i in range(row):
         vals = [int(val) for val in item.split(",")]
         image.append(sum(vals)/len(vals))
 
-print(clf.predict(image))
+print(clf.predict(image)[0])
