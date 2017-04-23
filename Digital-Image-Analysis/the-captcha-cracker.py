@@ -53,11 +53,13 @@ input_data, output_data = getData(directory)
 clf = LogisticRegression()
 clf.fit(input_data, output_data)
 
-print(clf.predict(input_data[24]))
-print(output_data[24])
-
 # Set new captcha
-#captcha = input().split(" ")
+image = []
+row, col = map(int,input().split(' '))
+for i in range(row):
+    line = input()
+    for item in line.split(" "):
+        vals = [int(val) for val in item.split(",")]
+        image.append(sum(vals)/len(vals))
 
-# Predict new captcha
-#print(clf.predict(captcha))
+print(clf.predict(image))
