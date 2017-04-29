@@ -9,23 +9,22 @@
 # Reference: https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
 # Developer: Murillo Grubler
 
+# Define functions
+def mean(data):
+    return sum(data) / len(data)
+
 # Set data
 physics = [15.0, 12.0, 8.0, 8.0, 7.0, 7.0, 7.0, 6.0, 5.0, 3.0]
 history = [10.0, 25.0, 17.0, 11.0, 13.0, 17.0, 20.0, 13.0, 9.0, 15.0]
 
-sum_physics = sum(physics)
-sum_history = sum(history)
+mean_physics = mean(physics)
+mean_history = mean(history)
 
-var_physics = sum([p**2 for p in physics])
-var_history = sum([h**2 for h in history])
-
-print(var_physics)
-print(var_history)
-
+var_physics = sum([(p - mean_physics) ** 2 for p in physics])
 sum_phy_his = 0
 for i in range(len(physics)):
-    sum_phy_his += physics[i] * history[i]
+    sum_phy_his += (physics[i] - mean_physics) * (history[i] - mean_history)
 
-# slope = ( Σ(xy) - Σ(x)Σ(y) ) / ( Σ(y²) - Σ(x²) )
-# s = (sum_phy_his - (sum_physics * sum_history)) / (sum_history - sum_physics)
-# print(round(s, 3))
+# slope = Σ(x - mean(x)) * (y - mean(y)) / Σ (x - mean(x))²
+slope = sum_phy_his / var_physics
+print(round(slope, 3))
