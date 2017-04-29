@@ -12,7 +12,7 @@
 # per square foot of the houses for which he has compiled feature data but 
 # no pricing.
 
-# Link: https://www.hackerrank.com/challenges/correlation-and-regression-lines-7
+# Link: https://www.hackerrank.com/challenges/predicting-house-prices
 # Reference: http://onlinestatbook.com/2/regression/intro.html
 # Developer: Murillo Grubler
 
