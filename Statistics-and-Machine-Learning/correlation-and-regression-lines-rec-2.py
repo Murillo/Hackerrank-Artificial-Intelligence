@@ -6,7 +6,7 @@
 # three decimal places.
 
 # Link: https://www.hackerrank.com/challenges/correlation-and-regression-lines-7
-# Reference: https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
+# Reference: http://onlinestatbook.com/2/regression/intro.html
 # Developer: Murillo Grubler
 
 # Define functions
