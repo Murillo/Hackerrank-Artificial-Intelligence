@@ -8,7 +8,6 @@
 
 
 # Link: https://www.hackerrank.com/challenges/predicting-office-space-price
-# Reference: http://onlinestatbook.com/2/regression/intro.html
 # Developer: Murillo Grubler
 
 # Import libraries
