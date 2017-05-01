@@ -11,8 +11,10 @@
 # Reference: http://onlinestatbook.com/2/regression/intro.html
 # Developer: Murillo Grubler
 
-# Import library
+# Import libraries
 from sklearn import linear_model
+from sklearn.preprocessing import PolynomialFeatures
+import numpy as np
 
 # Set data
 features, rows = map(int, input().split())
@@ -29,11 +31,12 @@ for i in range(rows):
             Y.append(elements[j])
     X.append(x)
 
+# Set Polynomial Features
+poly = PolynomialFeatures(degree=3)
+
 # Set the model LinearRegression
 model = linear_model.LinearRegression()
-model.fit(X, Y)
-a = model.intercept_
-b = model.coef_
+model.fit(poly.fit_transform(np.array(X)), Y)
 
 # Get the parameters X for discovery the Y
 new_rows = int(input())
@@ -46,6 +49,6 @@ for i in range(new_rows):
     new_X.append(x)
 
 # Gets the result and show on the screen
-result = model.predict(new_X)
+result = model.predict(poly.fit_transform(np.array(new_X)))
 for i in range(len(result)):
     print(round(result[i],2))
