@@ -7,8 +7,11 @@
 # Reference: https://stats.stackexchange.com/questions/22718/what-is-the-difference-between-linear-regression-on-y-with-x-and-x-with-y
 # Developer: Murillo Grubler
 
+# Estimate the value of x when y = 7
 y = 7
+
+# 20x – 9y – 107 = 0
 val_x = (9 * y + 107) / 20
-print (round(val_x, 1))
 
 # Result: 8.5
+print (round(val_x, 1))
