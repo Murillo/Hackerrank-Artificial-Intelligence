@@ -1,4 +1,11 @@
 # Hackerrank - Artificial Intelligence
+
+<div style='float: center; text-align: center; margin-bottom: 20px'>
+  <a href='https://www.hackerrank.com/msgrubler' target="_blank">
+  <img width="400px" src="https://blog.hackerrank.com/wp-content/uploads/2017/04/logo_HRwordmark2700x670_2-1.png" />
+  </a>
+</div>
+
 This repository contains challenges of site [Hackerrank](https://www.hackerrank.com/domains/ai/ai-introduction) about domains of the Artificial Intelligence.
 
 | Subdomain     | Challenge                               | Level | Max Score | Score Obtained |
