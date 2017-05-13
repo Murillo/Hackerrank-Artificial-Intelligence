@@ -15,56 +15,37 @@
 import math as m
 
 # Define functions
-def mean(data):
-    return sum(data) / len(data)
+def pearson(first_data, second_data, n):
+    # Numerator part
+    sum_firt_data       = sum(first_data)
+    sum_second_data     = sum(second_data)
+    sum_data            = sum([x*y for x,y in zip(first_data, second_data)])
 
-def var(data):
-    sum = 0
-    for i in range(len(data)):
-        sum = sum + (data[i] - mean(data)) ** 2
-    return sum
+    # Denominator part
+    sum_first_data_squared      = sum([x**2 for x in first_data])
+    sum_first_data_mult_squared = sum_firt_data ** 2
+    sum_secon_data_squared      = sum([y**2 for y in second_data])
+    sum_secon_data_mult_squared = sum_second_data ** 2
 
-def cov(dt1, dt2):
-    sum = 0
-    for i in range(len(dt1)):
-        sum += (dt1[i] - mean(dt1)) * (dt2[i] - mean(dt2))
-    return sum
+    numerator = (n * sum_data) - (sum_firt_data * sum_second_data)
+    den_first_data = m.sqrt((n * sum_first_data_squared) - sum_first_data_mult_squared)
+    den_second_data = m.sqrt((n * sum_secon_data_squared) - sum_secon_data_mult_squared)
+
+    return round(numerator / (den_first_data * den_second_data), 2)
+
 
 # Set data
-total = int(input())
+n = int(input())
 mathematics = []
 physics     = []
 chemistry   = []
-for i in range(total):
+for i in range(n):
     elements = list(map(float, input().split()))
     mathematics.append(elements[0])
     physics.append(elements[1])
     chemistry.append(elements[2])
 
-# Get mean
-mean_mathematics    = mean(mathematics)
-mean_physics        = mean(physics)
-mean_chemistry      = mean(chemistry)
-
-# Get variance
-var_mathematics = var(mathematics)
-var_physics     = var(physics)
-var_chemistry   = var(chemistry)
-
-# Get Correlation between Mathematics and Physics
-cov_math_phys   = cov(mathematics, physics)
-std_math_phys   = m.sqrt(var_mathematics * var_physics)
-r_math_phys     = cov_math_phys / std_math_phys
-print (round(r_math_phys,2))
-
-# Get Correlation between Physics and Chemistry
-cov_phys_chem   = cov(physics, chemistry)
-std_phys_chem   = m.sqrt(var_physics * var_chemistry)
-r_phys_chem     = cov_phys_chem / std_phys_chem
-print (round(r_phys_chem,2))
-
-# Get Correlation between Chemistry and Mathematics
-cov_chem_math   = cov(chemistry, mathematics)
-std_chem_math   = m.sqrt(var_chemistry * var_mathematics)
-r_chem_math     = cov_chem_math / std_chem_math
-print (round(r_chem_math,2))
+# Show the correlation
+print (pearson(mathematics, physics, float(n)))
+print (pearson(physics, chemistry, float(n)))
+print (pearson(mathematics, chemistry, float(n)))
