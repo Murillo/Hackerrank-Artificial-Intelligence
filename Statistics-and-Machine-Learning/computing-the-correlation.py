@@ -27,8 +27,8 @@ def pearson(first_data, second_data, n):
     sum_secon_data_squared      = sum([y**2 for y in second_data])
     sum_secon_data_mult_squared = sum_second_data ** 2
 
-    numerator = (n * sum_data) - (sum_firt_data * sum_second_data)
-    den_first_data = m.sqrt((n * sum_first_data_squared) - sum_first_data_mult_squared)
+    numerator       = (n * sum_data) - (sum_firt_data * sum_second_data)
+    den_first_data  = m.sqrt((n * sum_first_data_squared) - sum_first_data_mult_squared)
     den_second_data = m.sqrt((n * sum_secon_data_squared) - sum_secon_data_mult_squared)
 
     return round(numerator / (den_first_data * den_second_data), 2)
