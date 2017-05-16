@@ -8,7 +8,7 @@
 # Bag2. Find the probability that 2 balls are black and 1 
 # ball is red.
 
-# Challenge: https://www.hackerrank.com/challenges/basic-probability-puzzles-3
+# Challenge: https://www.hackerrank.com/challenges/basic-probability-puzzles-4
 # Reference: https://en.wikipedia.org/wiki/Probability
 # GitHub: https://github.com/Murillo
 # Developer: Murillo Grubler
