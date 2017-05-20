@@ -10,8 +10,6 @@
 
 # Challenge: https://www.hackerrank.com/challenges/basic-probability-puzzles-6
 # Reference: https://en.wikipedia.org/wiki/Probability
-# GitHub: https://github.com/Murillo
-# Developer: Murillo Grubler
 
 # P(Y = b | X = w) * P(X = w) + P(Y = b | X = b) + P(X = b)
 # (6/14 * 5/9) + (7/14 * 4/9) = 29/63 = 0.46031746
@@ -27,6 +25,5 @@ while len(X) > 0:
     total += len(Y)
     total_black += Y.count('b')
     Y.pop()
-
 
 print (total_black/total)
