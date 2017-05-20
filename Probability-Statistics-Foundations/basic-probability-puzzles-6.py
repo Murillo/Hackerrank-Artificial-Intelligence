@@ -14,16 +14,4 @@
 # P(Y = b | X = w) * P(X = w) + P(Y = b | X = b) + P(X = b)
 # (6/14 * 5/9) + (7/14 * 4/9) = 29/63 = 0.46031746
 
-X = ['w', 'w', 'w', 'w', 'w', 'b', 'b', 'b', 'b']
-Y = ['w', 'w', 'w', 'w', 'w', 'w', 'w', 'b', 'b', 'b', 'b', 'b', 'b']
-
-total = 0
-total_black = 0
-while len(X) > 0:
-    ball = X.pop()
-    Y.append(ball)
-    total += len(Y)
-    total_black += Y.count('b')
-    Y.pop()
-
-print (total_black/total)
+print ((6/14 * 5/9) + (7/14 * 4/9))
